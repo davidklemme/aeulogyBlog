@@ -16,7 +16,7 @@
         </div>
 
         <div class="">
-            <img class="rounded-md" src={`/src/content/images/${data.id}.jpg`} alt='Article Hero Picture' />
+            <img class="rounded-md" src={`content/images/${data.id}.jpg`} alt='Article Hero Picture' />
         </div>
         <div class="headline text-2xl font-extrabold m-2 md:m-4 my-4 md:my-8 w-5/6">{data.headline}</div>
         

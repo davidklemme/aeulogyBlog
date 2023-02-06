@@ -34,7 +34,7 @@
             <div class="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-16">
                 {#each copy as {headline, content, id}, i}
                     <div class="col-span-1">
-                        <Article src={`src/content/images/${id}.jpg`} alt= {'Article hero picture'} title={headline} content={content}/>
+                        <Article src={`content/images/${id}.jpg`} alt= {'Article hero picture'} title={headline} content={content}/>
                     </div>
                 {/each}
             </div>
