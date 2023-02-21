@@ -1,5 +1,5 @@
 <script lang="ts">
-    export let category: { title: string, description: string} = {title: '', description: ''};
+    export let category: { title: string, description: string, id: string} = {title: '', description: '', id:''};
     export let copy: {
         category: string, 
         headline: string, 
@@ -7,7 +7,11 @@
     }[] = [];
     export let collapsed: boolean = false;
     import Article from './Article.svelte';
-    
+    import { goto } from '$app/navigation';
+
+    function routeToArticle(route: string, replaceState: boolean) {
+        goto(`/${route}`, { replaceState }) 
+    }
 </script>
 
 
@@ -18,7 +22,13 @@
             <div class="font-serif text-3xl">{category.title}</div>
             <!-- Action to see all of category -->
             {#if collapsed}
-                <div class="text-xs text-amber-600">view more</div>
+                <div 
+                    class="text-xs text-amber-600"
+                    on:click={()=> routeToArticle(`topic/${category.id}`, false) } 
+                    on:keydown={()=> routeToArticle(`/topic/${category.id}`, true) } 
+                    on:keypress={()=> routeToArticle(`/topic/${category.id}`, true)} 
+                    on:keyup={()=> routeToArticle(`/topic/${category.id}`, true) }
+                >view more</div>
             {/if}
             
         </div>

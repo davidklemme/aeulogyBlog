@@ -14,8 +14,7 @@
 
     const recentCopy = copy.sort((a, b) => (a.date > b.date) ? -1 : 1).slice(0, 3)
     let src='hero_hamburg.jpg'
-    console.log('topics', topics)
-     
+    
 </script>
 
 <div>
@@ -37,7 +36,7 @@
             <div class="mt-12 w-9/12"> 
                 <!-- Recent topics (3) -->
 
-                    <TopicGrid category={{title: 'Most recent', description: ''}}  copy={recentCopy} collapsed={true}/>
+                    <TopicGrid category={{title: 'Most recent', description: '', id: ''}}  copy={recentCopy} collapsed={true}/>
                     {#each topics as category,i}
                             <TopicGrid category={category} copy={copy.filter((it) => it.category === category.title ).slice(0,3)} collapsed={true} />                        
                     {/each}
