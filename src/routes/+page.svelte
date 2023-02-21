@@ -1,22 +1,35 @@
 
 <script lang='ts'>
-	import Article from "../components/Article.svelte";
     import MainArticle from "../components/MainArticle.svelte";
-    import {copy}  from "../content/copy/00002";
+    import MainCta from "../components/MainCTA.svelte";
+    import SecondaryCta from "../components/SecondaryCTA.svelte";
+    import Footer from "../components/Footer.svelte";
+	import TopicGrid from "../components/TopicGrid.svelte";
+    import {topics} from "../content/topics";
+    import {copy} from "../content/copy/00002";
     
+	import { now } from "svelte/internal";
+
+    const logoSrc = 'logo_aeulogy.png'
+
+
+    const recentCopy = copy.sort((a, b) => (a.date > b.date) ? -1 : 1).slice(0, 3)
     let src='hero_hamburg.jpg'
+    console.log('topics', topics)
      
 </script>
 
 <div>
     <!-- Logo -->
-    <div></div>
+    <div class="flex items-center justify-center my-4">
+        <img src={logoSrc} height='40px' width="104px" alt="Aeulogy Logo" />
+    </div>
     <!-- Divider -->
     <div class="w-full shadow-sm border-b-2" />
-        <div class="m-4 md:m-6">
+    <div class="m-4 md:m-6">
         <div>
             <!-- Top header -->
-            <div class="flex items-center justify-between ">
+            <div class="flex items-center justify-between mx-28">
                 <h1 class="text-3xl font-extrabold">Aeulogy journal.</h1>
                 <div class="flex flex-col items-end">
                     
@@ -36,25 +49,21 @@
             </div>
 
         </div>
-        <div class="w-full mt-12 flex items-center justify-center">
-            <!-- Intro -->
-            <div class="w-9/12 flex justify-between items-center">
-                <div class="font-serif text-3xl">Lorem Ipsum</div>
-                <!-- Action to see all of category -->
-                <div class="text-xs text-amber-600">view more</div>
-            </div>
-        </div>
-        <div class="w-full flex items-center justify-center">
-            <!-- Grid -->
-            <div class="mt-12 w-9/12">
-                <div class="w-full flex  flex-col items-center md:grid md:grid-cols-3 gap-4 md:gap-8">
-                    {#each copy as {category, headline, id}, i}
-                        <div class="col-span-1">
-                            <Article src={`content/images/${id}.jpg`} alt= {'Article hero picture'} category={category} title={headline} />
-                        </div>
+        <div class="flex flex-col items-center justify-center">
+            <div class="mt-12 w-9/12"> 
+                <!-- Recent topics (3) -->
+
+                    <TopicGrid category={{title: 'Most recent', description: ''}}  copy={recentCopy}/>
+                    {#each topics as category,i}
+                            <TopicGrid category={category} copy={copy.filter((it) => it.category === category.title ).slice(0,3)}/>                        
                     {/each}
-                </div>
-                </div>
+            </div>
+        </div>  
+        <div class="flex flex-col items-center my-12">
+            <MainCta />
+            <SecondaryCta />
         </div>
+
     </div>
+    <Footer />
 </div>
