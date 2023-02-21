@@ -1,25 +1,65 @@
-<script>
-	import Article from '../../../components/Article.svelte';
-
-    /** @type {import('./$types').PageData} */
-    export let data;
+<script lang="ts">
+    import Header from '../../../components/Header.svelte';
+	import Footer from '../../../components/Footer.svelte';
+	import MainCta from '../../../components/MainCTA.svelte';
+	import SecondaryCta from '../../../components/SecondaryCTA.svelte';
+    import Toc from '../../../components/Article/Toc.svelte';
+    export let data: { 
+            id: string,
+            date: string,
+            headline: string,
+            category: string,
+            content: { 
+                content: string,
+                subtitle: string
+            }[], 
+    }
 </script>
 
 <body>
-    <div class="m-2 md:m-20">
-        <div class="flex items-center justify-between py-8 md:py-12">
-            <h1 class="text-2xl md:text-3xl font-extrabold">journal.</h1>
-            <div class="flex flex-col items-end">
-                <h1 class="md:text-xl font-bold">Aeulogy</h1>
-                <p class="text-sm md:text-xl">Get your custom eulogy</p>
+    <Header />
+    
+    <div class="m-2">
+        <!-- headline -->
+        <div class="bg-background-focus w-full p-2 md:p-14">
+            <div class="text-tertiary uppercase text-md">
+                {data?.category}
+            </div>
+            <div class="text-slate-800 text-5xl font-serif my-2 w-3/6">
+                {data?.headline}
+            </div>
+            <div class="text-slate-800 text-sm">
+                {data?.date}
             </div>
         </div>
-
-        <div class="">
-            <img class="rounded-md" src={`content/images/${data.id}.jpg`} alt='Article Hero Picture' />
+        <div class="flex flex-col items-center justify-center">
+            <div class="mt-12 w-9/12">
+                
+            </div>
+        </div> 
+        <!-- article  -->
+        <div class="flex justify-evenly md:m-24">
+            <!-- ToC -->
+            <div class="flex px-4">
+                <Toc data={data?.content} />
+            </div>
+            <!-- Content -->
+            <div class="max-w-lg">
+                {#each data?.content as {subtitle, content} }
+                    <div class="mb-8">
+                        <div class="text-2xl font-serif">{subtitle}</div>
+                        
+                        <div class="pt-6">{content}</div>
+                    </div>
+                {/each}
+            </div>        
+            
+            <!-- End content -->
+            <div class="flex flex-col items-center my-12 md:m-0">
+                <MainCta />
+                <SecondaryCta />
+            </div>
         </div>
-        <div class="headline text-2xl font-extrabold m-2 md:m-4 my-4 md:my-8 w-5/6">{data.headline}</div>
-        
-        <p class="content m-2 md:m-4 md:w-3/5">{data.content}</p>
     </div>
+    <Footer />
 </body>

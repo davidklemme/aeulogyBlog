@@ -1,5 +1,5 @@
 
-<div class="bg-gray-200 shadow-lg m-8 mt-16 p-4 flex flex-col md:flex-row items-center justify-evenly w-11/12">
+<div class="bg-background-focus shadow-lg m-8 mt-16 p-4 flex flex-col md:flex-row items-center justify-evenly w-11/12">
     <div class="text-slate-800 flex flex-col justify-center items-center">
         <div class="font-serif text-2xl">Follow us on Social Media</div>
     </div>

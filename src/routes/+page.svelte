@@ -7,9 +7,8 @@
 	import TopicGrid from "../components/TopicGrid.svelte";
     import {topics} from "../content/topics";
     import {copy} from "../content/copy/00002";
-    
-	import { now } from "svelte/internal";
-
+    import Header from "../components/Header.svelte";
+	
     const logoSrc = 'logo_aeulogy.png'
 
 
@@ -20,22 +19,7 @@
 </script>
 
 <div>
-    <!-- Logo -->
-    <div class="flex items-center justify-center my-4">
-        <img src={logoSrc} height='40px' width="104px" alt="Aeulogy Logo" />
-    </div>
-    <!-- Divider -->
-    <div class="w-full shadow-sm border-b-2" />
-    <div class="m-4 md:m-6">
-        <div>
-            <!-- Top header -->
-            <div class="flex items-center justify-between mx-28">
-                <h1 class="text-3xl font-extrabold">Aeulogy journal.</h1>
-                <div class="flex flex-col items-end">
-                    
-                    <p class="text-xs font-sans">Resources around eulogies, writing eulogies, grief, loss and more</p>
-                </div>
-            </div>
+    <Header />
             <div class="">
                 <div class="mt-12 w-full flex flex-col md:flex-row -space-x-28 items-center justify-center">
                     <!-- Hero -->
@@ -48,14 +32,14 @@
                 </div>
             </div>
 
-        </div>
+        
         <div class="flex flex-col items-center justify-center">
             <div class="mt-12 w-9/12"> 
                 <!-- Recent topics (3) -->
 
-                    <TopicGrid category={{title: 'Most recent', description: ''}}  copy={recentCopy}/>
+                    <TopicGrid category={{title: 'Most recent', description: ''}}  copy={recentCopy} collapsed={true}/>
                     {#each topics as category,i}
-                            <TopicGrid category={category} copy={copy.filter((it) => it.category === category.title ).slice(0,3)}/>                        
+                            <TopicGrid category={category} copy={copy.filter((it) => it.category === category.title ).slice(0,3)} collapsed={true} />                        
                     {/each}
             </div>
         </div>  
@@ -64,6 +48,6 @@
             <SecondaryCta />
         </div>
 
-    </div>
+    
     <Footer />
 </div>
