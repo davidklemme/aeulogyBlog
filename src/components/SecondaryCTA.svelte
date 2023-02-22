@@ -1,12 +1,12 @@
 <script lang="ts">
     export let orientation: 'col'| 'row' = 'row';
     let orientationClass = `bg-background-focus shadow-lg m-8 mt-16 p-4 flex flex-col md:flex-${orientation} items-center justify-evenly w-11/12`
-    let iconAlignment =`pt-6 md:pt-0 flex m-2 items-center justify-evenly md:justify-evenly w-5/6 md:w-${orientation === 'row' ? 2 : 6}/6 text-white fill-slate-800`
+    let iconAlignment =`pt-6 md:pt-0 flex m-2 items-center justify-evenly w-5/6 md:w-${orientation === 'row' ? 2 : 6}/6 fill-slate-800`
 </script>
 
 
 <div class={orientationClass}>
-    <div class="text-slate-800 flex flex-col justify-center items-center">
+    <div class="text-slate-800 w-full">
         <div class="text-center font-serif text-2xl">Follow us on Social Media</div>
     </div>
     <div class={iconAlignment}>
