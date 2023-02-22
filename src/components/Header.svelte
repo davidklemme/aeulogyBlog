@@ -12,7 +12,7 @@
         <div>
             <!-- Top header -->
             <div class="flex items-center justify-between mx-28">
-                <h1 class="text-3xl font-serif">Aeulogy journal.</h1>
+                <h1 class="text-4xl font-serif">Aeulogy journal.</h1>
                 <div class="flex flex-col items-end">
                     
                     <p class="text-xs font-sans">Resources around eulogies, writing eulogies, grief, loss and more</p>
