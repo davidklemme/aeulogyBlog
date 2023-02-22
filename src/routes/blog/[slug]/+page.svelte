@@ -77,7 +77,7 @@
             </div>        
             
             <!-- End content -->
-            <div class="flex flex-col items-center my-12 md:m-0 col-span-2">
+            <div class="flex flex-col items-center my-12 md:m-0 col-span-2 sticky">
                 <MainCta orientation='col'/>
                 <SecondaryCta orientation='col' />
             </div>
