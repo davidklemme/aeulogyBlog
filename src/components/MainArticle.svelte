@@ -1,9 +1,15 @@
 <script lang="ts">
+    import { goto } from "$app/navigation";
+    
+    function routeToArticle(route: string, replaceState: boolean) {
+        goto(`/${route}`, { replaceState })
+    }
     export let src: string;
     export let alt: string;
     export let category: string = ''
     export let title: string = '';
     export let date: string = new Date().toLocaleDateString();
+    export let id: string ='';
 </script>
 
 <style>
@@ -36,7 +42,13 @@
         <div class="text-xs pt-6 pb-10">
             {date} by <span class="font-bold">Aeulogy</span>
         </div>
-        <div class="flex text-amber-600">
+        <btn 
+            class="flex text-amber-600 cursor-pointer"
+            on:click={()=> routeToArticle(`blog/${id}`, false) }
+            on:keydown={()=> routeToArticle(`/blog/${id}`, false) }
+            on:keypress={()=> routeToArticle(`/blog/${id}`, false)}
+            on:keyup={()=> routeToArticle(`/blog/${id}`, false) }
+            >
             <div class="mr-4">
                 Read more 
             </div>
@@ -44,6 +56,6 @@
                 <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3" />
               </svg>
             
-        </div>
+            </btn>
     </div>
 </div>

@@ -1,4 +1,9 @@
 <script lang="ts">
+    import Article from './Article.svelte';
+    import { goto } from '$app/navigation';
+	import BackOneLevel from './Article/BackOneLevel.svelte';
+    import { page } from '$app/stores';
+
     export let category: { title: string, description: string, id: string} = {title: '', description: '', id:''};
     export let copy: {
         category: string, 
@@ -6,9 +11,7 @@
         id: string
     }[] = [];
     export let collapsed: boolean = false;
-    import Article from './Article.svelte';
-    import { goto } from '$app/navigation';
-    console.log('category', category)
+    
     function routeToArticle(route: string, replaceState: boolean) {
         goto(`/${route}`, { replaceState }) 
     }
@@ -19,7 +22,13 @@
 <div>
         <!-- Category Intro -->
         <div class="flex justify-between items-center py-8">
-            <div class="font-serif text-3xl">{category.title}</div>
+            <div>
+                {#if $page.url.pathname !== '/'}
+                    <BackOneLevel upperLevelRoute=''/> 
+                {/if}
+                <div class="font-serif text-3xl">{category.title}</div>
+            </div>
+            
             <!-- Action to see all of category -->
             {#if collapsed}
                 <btn 

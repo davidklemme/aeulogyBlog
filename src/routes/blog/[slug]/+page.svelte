@@ -4,6 +4,7 @@
 	import MainCta from '../../../components/MainCTA.svelte';
 	import SecondaryCta from '../../../components/SecondaryCTA.svelte';
     import Toc from '../../../components/Article/Toc.svelte';
+	import BackOneLevel from '../../../components/Article/BackOneLevel.svelte';
     export let data: { 
             id: string,
             date: string,
@@ -34,7 +35,11 @@
     <div class="m-0">
         <!-- headline -->
         <div class="flex flex-col items-end -space-y-48">
-            <div class="bg-background-focus w-full p-2 md:p-12 md:py-28">
+            <div class="bg-background-focus w-full p-2 md:p-12 md:py-14">
+                <!-- Back -->
+                <div class="mb-12">
+                    <BackOneLevel upperLevelRoute={``} />
+                </div>
                 <div class="text-tertiary uppercase text-md">
                     {data?.category}
                 </div>
