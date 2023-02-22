@@ -1,9 +1,15 @@
+<script lang="ts">
+    export let orientation: 'col'| 'row' = 'row';
+    let orientationClass = `bg-background-focus shadow-lg m-8 mt-16 p-4 flex flex-col md:flex-${orientation} items-center justify-evenly w-11/12`
+    let iconAlignment =`pt-6 md:pt-0 flex m-2 items-center justify-evenly md:justify-evenly w-5/6 md:w-${orientation === 'row' ? 2 : 6}/6 text-white fill-slate-800`
+</script>
 
-<div class="bg-background-focus shadow-lg m-8 mt-16 p-4 flex flex-col md:flex-row items-center justify-evenly w-11/12">
+
+<div class={orientationClass}>
     <div class="text-slate-800 flex flex-col justify-center items-center">
-        <div class="font-serif text-2xl">Follow us on Social Media</div>
+        <div class="text-center font-serif text-2xl">Follow us on Social Media</div>
     </div>
-    <div class="pt-6 md:pt-0 flex m-2 items-center justify-evenly md:justify-evenly w-5/6 md:w-2/6 text-white fill-slate-800">
+    <div class={iconAlignment}>
         <!-- facebook -->
         <div class="h-[36px] w-[36px]">
             <svg height="100%" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;" version="1.1" viewBox="0 0 512 512" width="100%" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M374.244,285.825l14.105,-91.961l-88.233,0l0,-59.677c0,-25.159 12.325,-49.682 51.845,-49.682l40.116,0l0,-78.291c0,0 -36.407,-6.214 -71.213,-6.214c-72.67,0 -120.165,44.042 -120.165,123.775l0,70.089l-80.777,0l0,91.961l80.777,0l0,222.31c16.197,2.541 32.798,3.865 49.709,3.865c16.911,0 33.511,-1.324 49.708,-3.865l0,-222.31l74.128,0Z" style="fill-rule:nonzero;"/></svg>

@@ -14,39 +14,52 @@
                 subtitle: string
             }[], 
     }
+
+    const logoSrc = '/logo_aeulogy.png'
+    let src='/hero_hamburg.jpg'
+
 </script>
 
 <body>
-    <Header />
+    <div class="flex items-center justify-center my-4">
+        <img src={logoSrc} height='40px' width="104px" alt="Aeulogy Logo" />
+    </div>
+    <!-- Divider -->
+    <div class="w-full shadow-sm border-b-2" />
     
-    <div class="m-2">
+    <div class="m-0">
         <!-- headline -->
-        <div class="bg-background-focus w-full p-2 md:p-14">
-            <div class="text-tertiary uppercase text-md">
-                {data?.category}
+        <div class="flex flex-col items-end -space-y-48">
+            <div class="bg-background-focus w-full p-2 md:p-12 md:py-28">
+                <div class="text-tertiary uppercase text-md">
+                    {data?.category}
+                </div>
+                <div class="text-slate-800 text-5xl font-serif my-2 w-3/6">
+                    {data?.headline}
+                </div>
+                <div class="text-slate-800 text-sm">
+                    {data?.date}
+                </div>
             </div>
-            <div class="text-slate-800 text-5xl font-serif my-2 w-3/6">
-                {data?.headline}
-            </div>
-            <div class="text-slate-800 text-sm">
-                {data?.date}
-            </div>
-        </div>
-        <div class="flex flex-col items-center justify-center">
-            <div class="mt-12 w-9/12">
-                
+            <div class="mt-12 w-4/12">
+                <img class="pr-20" src={src} alt="Aeulogy hero picture" />
             </div>
         </div> 
         <!-- article  -->
-        <div class="flex justify-evenly md:m-24">
+        <div class="grid grid-cols-7 gap-6 md:m-24">
             <!-- ToC -->
-            <div class="flex px-4">
+            <div class="flex col-span-1">
                 <Toc data={data?.content} />
             </div>
             <!-- Content -->
-            <div class="max-w-lg">
-                {#each data?.content as {subtitle, content} }
+            <div class="col-span-4">
+                {#each data?.content as {subtitle, content},i }
                     <div class="mb-8">
+                        {#if i === 1}
+                        <div class="my-4">
+                            <img src={`/content/images/${data.id}.jpg`} alt="Article hero picture" class="w-full"/>
+                        </div>
+                        {/if}
                         <div class="text-2xl font-serif">{subtitle}</div>
                         
                         <div class="pt-6">{content}</div>
@@ -55,9 +68,9 @@
             </div>        
             
             <!-- End content -->
-            <div class="flex flex-col items-center my-12 md:m-0">
-                <MainCta />
-                <SecondaryCta />
+            <div class="flex flex-col items-center my-12 md:m-0 col-span-2">
+                <MainCta orientation='col'/>
+                <SecondaryCta orientation='col' />
             </div>
         </div>
     </div>
