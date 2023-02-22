@@ -20,6 +20,10 @@
 
 </script>
 
+<svelte:head>
+    <title>Aeulogy - {data.headline}</title>
+</svelte:head>
+
 <body>
     <div class="flex items-center justify-center my-4">
         <img src={logoSrc} height='40px' width="104px" alt="Aeulogy Logo" />

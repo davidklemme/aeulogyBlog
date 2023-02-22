@@ -4,16 +4,22 @@
 	import Footer from '../../../components/Footer.svelte';
 	import MainCta from '../../../components/MainCTA.svelte';
 	import SecondaryCta from '../../../components/SecondaryCTA.svelte';
+	import { topics } from '../../../content/topics';
     const logoSrc = 'logo_aeulogy.png'    
     export let data: { 
         topic: {
-            title: string, description: string 
+            title: string, description: string, id:string 
             }, 
         copy: {
             category: string; headline: string; id: string; content: string; toc: string[]           
         }[] 
         };
 </script>
+
+<svelte:head>
+    <title>Aeulogy - {data.topic.title}</title>
+</svelte:head>
+
 
 <body>
     <Header />

@@ -17,6 +17,10 @@
     
 </script>
 
+<svelte:head>
+    <title>Aeulogy Blog</title>
+</svelte:head>
+
 <div>
     <Header />
             <div class="">
