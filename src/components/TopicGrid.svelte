@@ -8,7 +8,7 @@
     export let collapsed: boolean = false;
     import Article from './Article.svelte';
     import { goto } from '$app/navigation';
-
+    console.log('category', category)
     function routeToArticle(route: string, replaceState: boolean) {
         goto(`/${route}`, { replaceState }) 
     }
@@ -22,13 +22,13 @@
             <div class="font-serif text-3xl">{category.title}</div>
             <!-- Action to see all of category -->
             {#if collapsed}
-                <div 
-                    class="text-xs text-amber-600"
+                <btn 
+                    class="text-xs text-amber-600 cursor-pointer"
                     on:click={()=> routeToArticle(`topic/${category.id}`, false) } 
-                    on:keydown={()=> routeToArticle(`/topic/${category.id}`, true) } 
-                    on:keypress={()=> routeToArticle(`/topic/${category.id}`, true)} 
-                    on:keyup={()=> routeToArticle(`/topic/${category.id}`, true) }
-                >view more</div>
+                    on:keydown={()=> routeToArticle(`/topic/${category.id}`, false) } 
+                    on:keypress={()=> routeToArticle(`/topic/${category.id}`, false)} 
+                    on:keyup={()=> routeToArticle(`/topic/${category.id}`, false) }
+                >view more</btn>
             {/if}
             
         </div>

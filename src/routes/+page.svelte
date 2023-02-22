@@ -36,7 +36,7 @@
             <div class="mt-12 w-9/12"> 
                 <!-- Recent topics (3) -->
 
-                    <TopicGrid category={{title: 'Most recent', description: '', id: ''}}  copy={recentCopy} collapsed={true}/>
+                    <TopicGrid category={{title: 'Most recent', description: '', id: '00000'}}  copy={recentCopy} collapsed={true}/>
                     {#each topics as category,i}
                             <TopicGrid category={category} copy={copy.filter((it) => it.category === category.title ).slice(0,3)} collapsed={true} />                        
                     {/each}
