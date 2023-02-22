@@ -32,7 +32,7 @@
             {/if}
             
         </div>
-        <div class="font-serif text-xs pb-8">
+        <div class="font-serif text-xs pb-12">
             {category.description}
         </div>
 

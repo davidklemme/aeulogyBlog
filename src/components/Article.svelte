@@ -40,7 +40,7 @@
         <img {src} {alt} height="170px" width="265px"/>
     </div>
     <div class="m-4 pb-4">
-        <div class="category uppercase font-thin text-sm text-amber-600">{category}</div>
-        <p class="headline font-normal font-serif">{title}</p>
+        <div class="category uppercase font-thin text-base text-amber-600">{category}</div>
+        <p class="headline font-normal font-serif text-lg">{title}</p>
     </div>
 </div>
