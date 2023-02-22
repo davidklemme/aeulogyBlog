@@ -30,14 +30,14 @@
 
 
 <div 
-    class="shadow-lg max-h-[302px] max-w-[265px]" 
+    class="shadow-lg max-h-3xl max-w-3xl cursor-pointer" 
     on:click={()=> routeToArticle(`blog/${id}`, false) } 
     on:keydown={()=> routeToArticle(`/blog/${id}`, true) } 
     on:keypress={()=> routeToArticle(`/blog/${id}`, true)} 
     on:keyup={()=> routeToArticle(`/blog/${id}`, true) }
 >
-    <div class="h-[170px]">
-        <img {src} {alt} height="170px" width="265px"/>
+    <div class="">
+        <img {src} {alt}/>
     </div>
     <div class="m-4 pb-4">
         <div class="category uppercase font-thin text-base text-amber-600">{category}</div>

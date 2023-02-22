@@ -2,7 +2,7 @@
     export let data: {content: string, subtitle: string}[];
 </script>
 
-<div class="">
+<div class="w-full">
     <div class="shadow-lg p-2">
         <div class="font-serif uppercase text-xs p-2">
             What's in this article

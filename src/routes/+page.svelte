@@ -13,6 +13,7 @@
 
 
     const recentCopy = copy.sort((a, b) => (a.date > b.date) ? -1 : 1).slice(0, 3)
+    const noDummyTopics =  topics.slice(1)
     let src='hero_hamburg.jpg'
     
 </script>
@@ -24,7 +25,7 @@
 <div>
     <Header />
             <div class="">
-                <div class="mt-12 w-full flex flex-col md:flex-row -space-x-28 items-center justify-center">
+                <div class="mt-12 w-full flex flex-col md:flex-row md:-space-x-28 items-center justify-center">
                     <!-- Hero -->
                     <div class="w-9/12 ">
                         <img {src} alt="Aeulogy Background Picture"/>
@@ -41,7 +42,7 @@
                 <!-- Recent topics (3) -->
 
                     <TopicGrid category={{title: 'Most recent', description: '', id: '0'}}  copy={recentCopy} collapsed={true}/>
-                    {#each topics as category,i}
+                    {#each noDummyTopics as category,i}
                             <TopicGrid category={category} copy={copy.filter((it) => it.category === category.title ).slice(0,3)} collapsed={true} />                        
                     {/each}
             </div>

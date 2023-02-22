@@ -43,21 +43,21 @@
                 <div class="text-tertiary uppercase text-md">
                     {data?.category}
                 </div>
-                <div class="text-slate-800 text-5xl font-serif my-2 w-3/6">
+                <div class="text-slate-800 text-5xl font-serif my-2 md:w-3/6">
                     {data?.headline}
                 </div>
                 <div class="text-slate-800 text-sm">
                     {data?.date}
                 </div>
             </div>
-            <div class="mt-12 w-4/12">
+            <div class="mt-12 w-4/12 hidden md:block">
                 <img class="pr-20" src={src} alt="Aeulogy hero picture" />
             </div>
         </div> 
         <!-- article  -->
-        <div class="grid grid-cols-7 gap-6 md:m-24">
+        <div class="flex flex-col md:grid md:grid-cols-7 gap-6 md:m-24 items-center md:items-start m-2">
             <!-- ToC -->
-            <div class="flex col-span-1">
+            <div class="flex w-full md:col-span-1">
                 <Toc data={data?.content} />
             </div>
             <!-- Content -->
