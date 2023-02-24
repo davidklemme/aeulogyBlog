@@ -31,7 +31,7 @@
                         <img {src} alt="Aeulogy Background Picture"/>
                     </div>
                     <div class="">
-                        <MainArticle src={`content/images/${copy[0].id}.jpg`} alt= {'Article hero picture'} category={copy[0].category} title={copy[0].headline} id={copy[0].id} />
+                        <MainArticle src={`content/images/${copy[0].id}.jpg`} alt= {'Article hero picture'} category={copy[0].category} title={copy[0].headline} id={copy[0].id} date={copy[0].date}/>
                     </div>
                 </div>
             </div>
