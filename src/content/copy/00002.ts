@@ -47,9 +47,9 @@ export const copy = [
 	},
 	{
 		id: '00003',
-		date: '2019-01-03',
+		date: '2020-01-03',
 		category: 'Help & Support',
-		headline: 'A person who never made a mistake never tried anything new.',
+		headline: 'The person who never made a mistake never tried anything new.',
 		content: [
 			{
 				subtitle: 'Lorem',

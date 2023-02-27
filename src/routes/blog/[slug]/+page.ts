@@ -11,6 +11,16 @@ export type Params = {
 
 /** @type {import('./$types').PageLoad} */
 export function load({ params }: { params: Params }) {
+	if (params.slug === 'latest') {
+		const article = copy.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())[0];
+		return {
+			id: article?.id,
+			date: article?.date,
+			headline: article?.headline,
+			category: article?.category,
+			content: article?.content
+		};
+	}
 	const article = copy.find((article) => article.id === params.slug);
 	return {
 		id: article?.id,
