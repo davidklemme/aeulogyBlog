@@ -69,7 +69,7 @@
                             <img src={`/content/images/${data.id}.jpg`} alt="Article hero picture" class="w-full"/>
                         </div>
                         {/if}
-                        <div class="text-2xl font-serif">{subtitle}</div>
+                        <div class="text-2xl font-serif"><a href="">{subtitle}</a></div>
                         
                         <div class="pt-6">{content}</div>
                     </div>
