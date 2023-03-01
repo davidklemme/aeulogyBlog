@@ -21,7 +21,7 @@
     const copy =  $page.data.articles
     const recentCopy = copy.sort((a:Article, b:Article) => (a.date > b.date) ? -1 : 1).slice(0, 3)
     const noDummyTopics =  topics.slice(1)
-    let src='hero_hamburg.jpg'
+    let src='hero_hamburg_small.jpg'
 
     
     
