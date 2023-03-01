@@ -7,7 +7,8 @@
     import Toc from '../../../components/Article/Toc.svelte';
 	import BackOneLevel from '../../../components/Article/BackOneLevel.svelte';
 	import type { Article } from '../../+layout.server';
-	
+	import attribution from '../../../fixtures/attribution'
+
     
     export let data: Article;
 
@@ -15,6 +16,9 @@
 
     const logoSrc = '/logo_aeulogy.png'
     let src='/hero_hamburg.jpg'
+
+    const imageAttribution = (attribution.find((it) => it.id.toString() === $page.params.slug))?.attribution
+    
 
 </script>
 
@@ -64,6 +68,16 @@
                         {#if i === 1}
                         <div class="my-4">
                             <img src={`/content/images/${index.id}.jpg`} alt="Article hero picture" class="w-full"/>
+                            <div class="text-xs font-thin text-rightds">
+                                Picture by{' '}
+                                <a href="{imageAttribution?.nameLink}">
+                                    {imageAttribution?.name}
+                                </a>{' '}
+                                on{' '}
+                                <a href="{imageAttribution?.link}">
+                                    Unsplash
+                                </a>
+                            </div>
                         </div>
                         {/if}
                         <div class="text-2xl font-serif"><a href="">{subtitle}</a></div>
