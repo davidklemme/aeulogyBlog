@@ -1,7 +1,6 @@
-import { copy } from '../../../content/copy/00002';
 import { Client } from '@notionhq/client';
 
-export type Params = {
+export type Article = {
 	headline: string;
 	content: { content: string; subtitle: string }[];
 	category: string;
@@ -13,17 +12,7 @@ const splitter = '#####';
 const subSplitter = '$$$$$';
 
 /** @type {import('./$types').PageLoad} */
-export async function load({ params }: { params: Params }) {
-	if (params.slug === 'latest') {
-		const article = copy.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())[0];
-		return {
-			id: article?.id,
-			date: article?.date,
-			headline: article?.headline,
-			category: article?.category,
-			content: article?.content
-		};
-	}
+export async function load({ params }: { params: Article }) {
 	const notion = new Client({
 		auth: process.env.NOTION_API_KEY
 	});
@@ -85,13 +74,8 @@ export async function load({ params }: { params: Params }) {
 	);
 	const filteredArticles = prepareContent(articles.filter((article) => article !== undefined));
 
-	const article = filteredArticles?.find((article) => article?.id.toString() === params.slug);
 	return {
-		id: article?.id,
-		date: article?.date,
-		headline: article?.headline,
-		category: article?.category,
-		content: article?.content
+		articles: filteredArticles
 	};
 }
 

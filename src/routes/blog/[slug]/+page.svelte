@@ -1,20 +1,17 @@
 <script lang="ts">
+    import { page } from '$app/stores';      
     import Header from '../../../components/Header.svelte';
 	import Footer from '../../../components/Footer.svelte';
 	import MainCta from '../../../components/MainCTA.svelte';
 	import SecondaryCta from '../../../components/SecondaryCTA.svelte';
     import Toc from '../../../components/Article/Toc.svelte';
 	import BackOneLevel from '../../../components/Article/BackOneLevel.svelte';
-    export let data: { 
-            id: string,
-            date: string,
-            headline: string,
-            category: string,
-            content: { 
-                content: string,
-                subtitle: string
-            }[], 
-    }
+	import type { Article } from '../../+layout.server';
+	
+    
+    export let data: Article;
+
+    const index = $page.data.articles.find((it:Article) => it.id.toString() === $page.params.slug) || {}
 
     const logoSrc = '/logo_aeulogy.png'
     let src='/hero_hamburg.jpg'
@@ -41,13 +38,13 @@
                     <BackOneLevel upperLevelRoute={``} />
                 </div>
                 <div class="text-tertiary uppercase text-md">
-                    {data?.category}
+                    {index?.category}
                 </div>
                 <div class="text-slate-800 text-5xl font-serif my-2 md:w-3/6">
-                    {data?.headline}
+                    {index?.headline}
                 </div>
                 <div class="text-slate-800 text-sm">
-                    {data?.date}
+                    {index?.date}
                 </div>
             </div>
             <div class="mt-12 w-4/12 hidden md:block">
@@ -58,15 +55,15 @@
         <div class="flex flex-col md:grid md:grid-cols-7 gap-6 md:m-24 items-center md:items-start m-2">
             <!-- ToC -->
             <div class="flex w-full md:col-span-1 sticky top-1">
-                <Toc data={data?.content} />
+                <Toc data={index?.content} />
             </div>
             <!-- Content -->
             <div class="col-span-4">
-                {#each data?.content as {subtitle, content},i }
+                {#each index?.content as {subtitle, content},i }
                     <div class="mb-8">
                         {#if i === 1}
                         <div class="my-4">
-                            <img src={`/content/images/${data.id}.jpg`} alt="Article hero picture" class="w-full"/>
+                            <img src={`/content/images/${index.id}.jpg`} alt="Article hero picture" class="w-full"/>
                         </div>
                         {/if}
                         <div class="text-2xl font-serif"><a href="">{subtitle}</a></div>

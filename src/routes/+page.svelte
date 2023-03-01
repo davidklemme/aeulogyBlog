@@ -6,15 +6,24 @@
     import Footer from "../components/Footer.svelte";
 	import TopicGrid from "../components/TopicGrid.svelte";
     import {topics} from "../content/topics";
-    import {copy} from "../content/copy/00002";
+
     import Header from "../components/Header.svelte";
+    import {page} from '$app/stores';
 	
+	import type Article from "../components/Article.svelte";
+	
+
+      /** @type {import('./$types').PageData} */
+    export let data: Article[];
+
     const logoSrc = 'logo_aeulogy.png'
 
-
-    const recentCopy = copy.sort((a, b) => (a.date > b.date) ? -1 : 1).slice(0, 3)
+    const copy =  $page.data.articles
+    const recentCopy = copy.sort((a:Article, b:Article) => (a.date > b.date) ? -1 : 1).slice(0, 3)
     const noDummyTopics =  topics.slice(1)
     let src='hero_hamburg.jpg'
+
+    
     
 </script>
 
