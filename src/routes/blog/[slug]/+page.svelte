@@ -54,7 +54,7 @@
         <!-- article  -->
         <div class="flex flex-col md:grid md:grid-cols-7 gap-6 md:m-24 items-center md:items-start m-2">
             <!-- ToC -->
-            <div class="flex w-full md:col-span-1 sticky top-1">
+            <div class="flex w-full md:col-span-1 md:sticky top-1">
                 <Toc data={index?.content} />
             </div>
             <!-- Content -->
