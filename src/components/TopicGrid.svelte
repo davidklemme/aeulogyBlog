@@ -31,13 +31,7 @@
             
             <!-- Action to see all of category -->
             {#if collapsed}
-                <btn 
-                    class="text-xs text-amber-600 cursor-pointer"
-                    on:click={()=> routeToArticle(`topic/${category.id}`, false) } 
-                    on:keydown={()=> routeToArticle(`/topic/${category.id}`, false) } 
-                    on:keypress={()=> routeToArticle(`/topic/${category.id}`, false)} 
-                    on:keyup={()=> routeToArticle(`/topic/${category.id}`, false) }
-                >view more</btn>
+                <a href={`/topic/${category.id}`} class="text-xs text-amber-600 cursor-pointer">view more</a>
             {/if}
             
         </div>

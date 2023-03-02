@@ -24,7 +24,7 @@
 </svelte:head>
 
 
-<body>
+<div class="w-full">
     <Header />
     <div class="m-2 md:m-20">
         <div class="flex flex-col items-center justify-center">
@@ -46,4 +46,4 @@
         </div>
     </div>
     <Footer />
-</body>
+</div>
