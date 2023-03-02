@@ -7,6 +7,15 @@ export const attribution = [
 				'https://unsplash.com/@vasudha_nagaraju?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText',
 			link: 'https://unsplash.com/de/fotos/PWPYlBfytdo?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText'
 		}
+	},
+	{
+		id: 3,
+		attribution: {
+			name: 'Julia Caesar',
+			nameLink:
+				'https://unsplash.com/@juliacaesar?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText',
+			link: 'https://unsplash.com/de/fotos/3-3k_sYEJ1s?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText'
+		}
 	}
 ];
 export default attribution;

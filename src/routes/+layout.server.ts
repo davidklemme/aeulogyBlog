@@ -12,6 +12,8 @@ const splitter = '#####';
 const subSplitter = '$$$$$';
 const paragraphSplitter = '%%%%%';
 
+export const prerender = true;
+
 /** @type {import('./$types').PageLoad} */
 export async function load({ params }: { params: Article }) {
 	const notion = new Client({
@@ -39,6 +41,7 @@ export async function load({ params }: { params: Article }) {
 
 			if (page.properties?.Status?.status?.name !== 'Done') return;
 			const date = page.properties['End Date']?.date?.start;
+			const id = page.properties['Blog ID']?.number;
 
 			if (!date) return;
 			const headline = page.properties?.Name?.title[0]?.plain_text;
@@ -70,7 +73,7 @@ export async function load({ params }: { params: Article }) {
 					}
 				}
 			});
-			return { headline, date, content: articleContent, category, id: index };
+			return { headline, date, content: articleContent, category, id: id || index };
 		})
 	);
 	const filteredArticles = prepareContent(articles.filter((article) => article !== undefined));

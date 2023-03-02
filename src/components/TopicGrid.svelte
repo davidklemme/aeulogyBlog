@@ -46,7 +46,7 @@
         </div>
 
         <!-- Grid -->
-        <div class="w-full flex  flex-col items-center md:grid md:grid-cols-3 gap-4 md:gap-8">
+        <div class="w-full flex flex-col items-center md:grid md:grid-cols-3 gap-4 md:gap-8">
             {#each copy as {category, headline, id}, i}
                 <div class="col-span-1">
                     <Article src={`/content/images/${id}.jpg`} alt= {'Article hero picture'} category={category} title={headline} {id}/>
