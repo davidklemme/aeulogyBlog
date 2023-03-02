@@ -10,6 +10,7 @@ export type Article = {
 };
 const splitter = '#####';
 const subSplitter = '$$$$$';
+const paragraphSplitter = '%%%%%';
 
 /** @type {import('./$types').PageLoad} */
 export async function load({ params }: { params: Article }) {
@@ -65,7 +66,7 @@ export async function load({ params }: { params: Article }) {
 					if (it.type === 'heading_2') {
 						articleContent += `${splitter}${it[it.type]?.rich_text[0]?.plain_text}${subSplitter}`;
 					} else {
-						articleContent += `${it[it.type]?.rich_text[0]?.plain_text}`;
+						articleContent += `${paragraphSplitter}${it[it.type]?.rich_text[0]?.plain_text}`;
 					}
 				}
 			});
@@ -100,7 +101,7 @@ const prepareContent = (
 			.split(splitter)
 			.map((sub: string) => {
 				const cache = sub.split(subSplitter);
-				content = cache[1];
+				content = cache[1]?.split(paragraphSplitter);
 				subtitle = cache[0];
 				if (!subtitle) return;
 				return { content, subtitle };

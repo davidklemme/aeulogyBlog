@@ -81,8 +81,9 @@
                         </div>
                         {/if}
                         <div class="text-2xl font-serif"><a href="">{subtitle}</a></div>
-                        
-                        <div class="pt-6">{content}</div>
+                        {#each content as paragraph}
+                            <p class="pt-4">{paragraph}</p>
+                        {/each}
                     </div>
                 {/each}
             </div>        
