@@ -4,9 +4,8 @@
     <div>
         <div class="font-mono text-xs m-2 md:m-8 flex flex-col md:flex-row justify-evenly md:items-center">
             <p>© 2023 <span class="font-extrabold">Aeulogy</span> a brand of Berliner Softwareschmiede. All rights reserved.</p>
-            <p class="pt-2 md:pt-0">Terms of Service</p>
-            <p class="pt-2 md:pt-0">Privacy Policy</p>
-            <p class="pt-2 md:pt-0">Legal Disclosure</p>
+            <a href="https://app.termly.io/document/privacy-policy/e95c6189-892b-4939-a0f9-c73ede7a98c7" class="pt-2 md:pt-0">Privacy</a>
+            <a href="https://app.termly.io/document/terms-and-conditions/9e515fe4-23fa-4b75-bf26-2c2e1e6f04bb" class="pt-2 md:pt-0">Terms of Service</a>
         </div>
     </div>
 </div>
