@@ -20,6 +20,7 @@
 
 
 <div>
+    {#if category.id === '0' || copy.length > 0}
         <!-- Category Intro -->
         <div class="flex justify-between items-center py-8">
             <div>
@@ -31,7 +32,11 @@
             
             <!-- Action to see all of category -->
             {#if collapsed}
-                <a href={`/topic/${category.id}`} class="text-xs text-amber-600 cursor-pointer">view more</a>
+                    <a href={`/topic/${category.id}`} class="text-xs text-amber-600 cursor-pointer">
+                        {#if copy.length > 3}
+                            view more
+                        {/if}
+                    </a>
             {/if}
             
         </div>
@@ -47,4 +52,5 @@
                 </div>
             {/each}
         </div>
+    {/if}
 </div>
