@@ -53,7 +53,9 @@
 
                         <TopicGrid category={{title: 'Most recent', description: '', id: '0'}}  copy={recentCopy} collapsed={true}/>
                         {#each noDummyTopics as category,i}
+                            {#if copy.filter((it) => it.category === category.title ).length>0}
                                 <TopicGrid category={category} copy={copy.filter((it) => it.category === category.title ).slice(0,3)} collapsed={true} />                        
+                            {/if}
                         {/each}
                 </div>
             </div>  
