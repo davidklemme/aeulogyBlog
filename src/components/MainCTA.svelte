@@ -6,7 +6,7 @@
 <div class={orientationClass}>
     <div class="text-white flex flex-col justify-center items-center">
         <div class="font-serif text-xl">Let us help you write their story.</div>
-        <div class="text-xs mt-2">Aliquet lorem pulvinar hac ullamcorper suspendisse magna.</div>
+        <div class="text-xs mt-2">Get a professional, custom eulogy within one business day.</div>
     </div>
     {#if orientation === 'col'}
         <div class="pt-6">
