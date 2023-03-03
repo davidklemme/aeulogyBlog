@@ -23,7 +23,7 @@
 </script>
 
 <svelte:head>
-    <title>Aeulogy - {data.headline}</title>
+    <title>Aeulogy - {index.headline || 'Blog'}</title>
 </svelte:head>
 
 <body>
