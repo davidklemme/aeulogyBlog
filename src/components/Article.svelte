@@ -32,11 +32,13 @@
 >
     <a href={`/blog/${id}`}>
         <div class="">
-            <img {src} {alt} class="aspect-[14:9] h-72"/>
+            <img {src} {alt} class="object-scale-up aspect-[14:9] h-72"/>
         </div>
         <div class="m-4 pb-4">
             <div class="category uppercase font-thin text-base text-amber-600">{category}</div>
-            <p class="headline font-normal font-serif text-lg">{title}</p>
+            <div class="h-[56px]"> 
+                <p class="headline font-normal font-serif text-lg">{title}</p>
+            </div>
         </div>
     </a>
 </div>
