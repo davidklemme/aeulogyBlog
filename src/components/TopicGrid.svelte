@@ -31,9 +31,7 @@
             
             <!-- Action to see all of category -->
             {#if collapsed}
-                {#if copy.length > 3}
                     <a href={`/topic/${category.id}`} class="text-xs text-amber-600 cursor-pointer">view more</a>
-                {/if}
             {/if}
             
         </div>
