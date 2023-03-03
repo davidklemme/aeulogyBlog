@@ -20,7 +20,6 @@
 
 
 <div>
-    {#if copy.length>0}
         <!-- Category Intro -->
         <div class="flex justify-between items-center py-8">
             <div>
@@ -50,5 +49,4 @@
                 </div>
             {/each}
         </div>
-    {/if}
 </div>
