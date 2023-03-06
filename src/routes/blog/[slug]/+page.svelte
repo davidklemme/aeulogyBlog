@@ -11,9 +11,10 @@
 
     
     export let data: Article;
+    const isLatest = $page.params.slug==='latest'
 
-    const index = $page.data.articles.find((it:Article) => it.id.toString() === $page.params.slug) || {}
-
+    const index = isLatest ? $page.data.articles[0] :  $page.data.articles.find((it:Article) => it.id.toString() ===$page.params.slug) || {}
+    
     const logoSrc = '/logo_aeulogy.png'
     let src='/hero_hamburg.jpg'
 

@@ -12,7 +12,9 @@
     const logoSrc = 'logo_aeulogy.png'    
     
     const articles:Article[] = $page.data.articles
+    
     const isLatest = $page.params.slug==='0'
+    
     const topic:         {title: string, description: string, id:string } = topics.find((it)=>it.id === $page.params.slug) || {title: 'Most recent', description: '', id: '0'}
     if (isLatest){
         articles.sort((a,b)=> new Date(b.date).getTime() - new Date(a.date).getTime())
