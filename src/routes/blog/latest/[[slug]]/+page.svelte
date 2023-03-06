@@ -1,19 +1,19 @@
 <script lang="ts">
     import { page } from '$app/stores';      
-    import Header from '../../../components/Header.svelte';
-	import Footer from '../../../components/Footer.svelte';
-	import MainCta from '../../../components/MainCTA.svelte';
-	import SecondaryCta from '../../../components/SecondaryCTA.svelte';
-    import Toc from '../../../components/Article/Toc.svelte';
-	import BackOneLevel from '../../../components/Article/BackOneLevel.svelte';
-	import type { Article } from '../../+layout.server';
-	import attribution from '../../../fixtures/attribution'
+    import Header from '../../../../components/Header.svelte';
+	import Footer from '../../../../components/Footer.svelte';
+	import MainCta from '../../../../components/MainCTA.svelte';
+	import SecondaryCta from '../../../../components/SecondaryCTA.svelte';
+    import Toc from '../../../../components/Article/Toc.svelte';
+	import BackOneLevel from '../../../../components/Article/BackOneLevel.svelte';
+	import type { Article } from '../../../+layout.server';
+	import attribution from '../../../../fixtures/attribution'
 
     
     export let data: Article;
     
 
-    const index = $page.data.articles.find((it:Article) => it.id.toString() ===$page.params.slug) || {}
+    const index = $page.data.articles[0] || {}
     
     const logoSrc = '/logo_aeulogy.png'
     let src='/hero_hamburg.jpg'
