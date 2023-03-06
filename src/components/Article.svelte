@@ -3,7 +3,7 @@
     export let alt: string;
     export let category: string = ''
     export let title: string = '';
-    export let id: string = '00000';
+    export let id: string = '0';
     import { goto } from '$app/navigation';
 
     
@@ -30,7 +30,7 @@
 <div 
     class="shadow-lg max-h-3xl max-w-sm cursor-pointer" 
 >
-    <a href={`/blog/${id}`}>
+    <a href={id==='latest'? '/blog/latest/' : `/blog/${id}`}>
         <div class="">
             <img {src} {alt} class="object-scale-up aspect-[14:9] h-72"/>
         </div>
