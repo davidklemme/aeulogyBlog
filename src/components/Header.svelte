@@ -15,7 +15,7 @@
                 <h1 class="text-4xl font-serif">Aeulogy Journal.</h1>
                 <div class="flex flex-col items-end p-4 md:p-0">
                     
-                    <p class="text-xs font-sans">Resources around eulogies, writing eulogies, grief, loss and more</p>
+                    <a href="/blog/latest/0"> <p class="text-xs font-sans">Resources around eulogies, writing eulogies, grief, loss and more</p></a>
                 </div>
             </div>
         </div>

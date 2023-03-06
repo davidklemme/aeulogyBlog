@@ -30,7 +30,7 @@
 <div 
     class="shadow-lg max-h-3xl max-w-sm cursor-pointer" 
 >
-    <a href={id==='latest'? `/blog/latest/${id}` : `/blog/${id}`}>
+    <a href={`/blog/${id}`}>
         <div class="">
             <img {src} {alt} class="object-scale-up aspect-[14:9] h-72"/>
         </div>
