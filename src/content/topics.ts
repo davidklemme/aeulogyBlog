@@ -9,7 +9,7 @@ export const topics = [
 		id: '1',
 		title: 'Writing a eulogy',
 		description:
-			'Offers tips that focus on creating a eulogy effectively that honors the memory of a loved one.'
+			'Offers tips that focus on creating a eulogy effectively that honours the memory of a loved one.'
 	},
 	{
 		id: '2',
@@ -39,6 +39,6 @@ export const topics = [
 		id: '6',
 		title: 'About Eulogies',
 		description:
-			'Explores the history, significance, and cultural practices surrounding eulogies, providing insights into the traditions and customs associated with honoring and remembering loved ones.'
+			'Explores the history, significance, and cultural practices surrounding eulogies, providing insights into the traditions and customs associated with honouring and remembering loved ones.'
 	}
 ];
