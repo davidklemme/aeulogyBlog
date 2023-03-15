@@ -25,6 +25,24 @@ export const attribution = [
 				'https://unsplash.com/@fra93?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText',
 			link: 'https://unsplash.com/de/fotos/M37SwgutRIs?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText'
 		}
+	},
+	{
+		id: 5,
+		attribution: {
+			name: 'Dim Hou',
+			nameLink:
+				'https://unsplash.com/@dimhou?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText',
+			link: 'https://unsplash.com/de/fotos/2P6Q7_uiDr0?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText'
+		}
+	},
+	{
+		id: 6,
+		attribution: {
+			name: 'Slawek K',
+			nameLink:
+				'https://unsplash.com/it/@s1awek?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText',
+			link: 'https://unsplash.com/de/fotos/q32qOWVkzx4?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText'
+		}
 	}
 ];
 
