@@ -43,6 +43,15 @@ export const attribution = [
 				'https://unsplash.com/it/@s1awek?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText',
 			link: 'https://unsplash.com/de/fotos/q32qOWVkzx4?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText'
 		}
+	},
+	{
+		id: 7,
+		attribution: {
+			name: 'Vidar Nordli-Mathisen',
+			nameLink:
+				'https://unsplash.com/@vidarnm?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText',
+			link: 'https://unsplash.com/de/s/fotos/grief?orientation=landscape&plus=none&utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText'
+		}
 	}
 ];
 
