@@ -10,12 +10,16 @@
     </div>
     {#if orientation === 'col'}
         <div class="pt-6">
-            <button class="btn bg-slate-600 hover:bg-slate-500 text-white p-4 rounded-md m-2 px-8">Get Started Now</button>
+            <a href="https://www.aeulogy.com">
+                <button class="btn bg-slate-600 hover:bg-slate-500 text-white p-4 rounded-md m-2 px-8">Get Started Now</button>
+            </a>
         </div>
     {/if}
     {#if orientation === 'row'}
         <div class="pt-6 md:pt-0">
-            <button class="btn bg-slate-600 hover:bg-slate-500 text-white p-4 rounded-md">Get Started Now</button>
+            <a href="https://www.aeulogy.com">
+                <button class="btn bg-slate-600 hover:bg-slate-500 text-white p-4 rounded-md">Get Started Now</button>
+            </a>
         </div>
     {/if}
     
